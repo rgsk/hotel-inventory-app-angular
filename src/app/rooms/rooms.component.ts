@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Room } from './rooms';
 
 @Component({
   selector: 'app-rooms',
@@ -10,10 +11,19 @@ export class RoomsComponent {
   numberOfRooms = 312;
   count = 0;
   hideRooms = true;
+  names = ['rahul', 'mehak', 'raja', 'aman'];
+  rooms: Room[] = [
+    {
+      availableRooms: 0,
+      bookedRooms: 5,
+      totalRooms: 20,
+    },
+  ];
+  drop() {
+    this.names.pop();
+  }
   increment() {
-    console.log('before', this.count);
     this.count += 1;
-    console.log('after', this.count);
   }
   toggle() {
     this.hideRooms = !this.hideRooms;

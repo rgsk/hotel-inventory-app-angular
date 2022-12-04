@@ -2,5 +2,13 @@
 <div [innerText]="numberOfRooms"></div>
 <p>Count: {{count}}</p>
 <div><button (click)="increment()">add</button></div>
-<div [hidden]="hideRooms">rooms</div>
+<div *ngIf="!hideRooms">rooms</div>
 <div><button (click)="toggle()">toggle</button></div>
+
+<div *ngIf="rooms[0].availableRooms > 0">Rooms available</div>
+
+<ul>
+    <li *ngFor="let name of names">{{name}}</li>
+</ul>
+
+<button (click)="drop()">remove last</button>
